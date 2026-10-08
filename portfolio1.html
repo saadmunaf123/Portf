@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Saad Munaf Bangi — Full Stack Developer & IT Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f8fafc;
+  --bg2:#f1f5f9;
+  --white:#ffffff;
+  --dark:#0f172a;
+  --dark2:#1e293b;
+  --mid:#475569;
+  --muted:#94a3b8;
+  --light:#cbd5e1;
+  --border:#e2e8f0;
+  --accent:#2563eb;
+  --accent-light:#eff6ff;
+  --accent-mid:#dbeafe;
+  --accent2:#7c3aed;
+  --accent2-light:#f5f3ff;
+  --green:#059669;
+  --green-light:#ecfdf5;
+  --amber:#d97706;
+  --amber-light:#fffbeb;
+  --red:#dc2626;
+  --red-light:#fef2f2;
+  --ff:'Plus Jakarta Sans',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --radius:12px;
+  --shadow:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg:0 10px 40px rgba(0,0,0,0.1);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--dark);
+  font-family:var(--ff);font-size:16px;line-height:1.6;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(248,250,252,0.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.9rem 6vw;
+}
+.nav-brand{
+  font-weight:800;font-size:1.1rem;color:var(--dark);
+  letter-spacing:-0.03em;text-decoration:none;
+}
+.nav-brand span{color:var(--accent);}
+.nav-links{display:flex;gap:0.25rem;list-style:none;align-items:center;}
+.nav-links a{
+  color:var(--mid);text-decoration:none;font-size:0.82rem;
+  font-weight:500;padding:0.45rem 0.85rem;border-radius:6px;
+  transition:background 0.15s,color 0.15s;
+}
+.nav-links a:hover{background:var(--bg2);color:var(--dark);}
+.nav-hire{
+  background:var(--accent)!important;color:#fff!important;
+  font-weight:600!important;
+}
+.nav-hire:hover{background:#1d4ed8!important;color:#fff!important;}
+
+/* ─── HERO ─── */
+.hero{
+  padding:8rem 6vw 5rem;
+  display:grid;grid-template-columns:1fr 420px;gap:5rem;
+  align-items:center;
+  background:linear-gradient(160deg,var(--white) 60%,var(--accent-light) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero-avail{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  background:var(--green-light);border:1px solid #a7f3d0;
+  border-radius:100px;padding:0.3rem 0.9rem;
+  font-size:0.75rem;font-weight:600;color:var(--green);
+  margin-bottom:1.4rem;font-family:var(--mono);letter-spacing:0.04em;
+}
+.avail-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--green);
+  animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{
+  font-size:clamp(2.6rem,5vw,4rem);font-weight:800;
+  letter-spacing:-0.04em;line-height:1.05;margin-bottom:0.5rem;
+  color:var(--dark);
+}
+.hero h1 em{
+  font-style:normal;color:var(--accent);
+}
+.hero-role{
+  font-size:1.1rem;font-weight:500;color:var(--mid);margin-bottom:1.25rem;
+  letter-spacing:-0.01em;
+}
+.hero-desc{
+  font-size:1rem;color:var(--mid);line-height:1.8;
+  max-width:520px;margin-bottom:2rem;font-weight:400;
+}
+.hero-desc strong{color:var(--dark);font-weight:600;}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-blue{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--accent);color:#fff;
+  text-decoration:none;padding:0.75rem 1.6rem;
+  border-radius:8px;font-weight:700;font-size:0.875rem;
+  transition:background 0.15s,transform 0.15s;
+  box-shadow:0 2px 8px rgba(37,99,235,0.3);
+}
+.btn-blue:hover{background:#1d4ed8;transform:translateY(-1px);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  border:1.5px solid var(--border);color:var(--dark);
+  text-decoration:none;padding:0.75rem 1.6rem;
+  border-radius:8px;font-weight:600;font-size:0.875rem;
+  transition:border-color 0.15s,transform 0.15s,background 0.15s;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);transform:translateY(-1px);}
+.hero-quick{display:flex;flex-wrap:wrap;gap:0.6rem;}
+.hero-q{
+  display:flex;align-items:center;gap:0.4rem;
+  font-size:0.8rem;color:var(--mid);font-weight:500;
+}
+.hero-q svg{flex-shrink:0;}
+
+/* hero right card */
+.profile-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:16px;padding:1.75rem;
+  box-shadow:var(--shadow-lg);
+}
+.pc-top{
+  display:flex;align-items:center;gap:1rem;
+  padding-bottom:1.25rem;border-bottom:1px solid var(--border);
+  margin-bottom:1.25rem;
+}
+.pc-avatar{
+  width:56px;height:56px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;font-weight:800;color:#fff;
+  font-family:var(--ff);
+}
+.pc-name{font-weight:800;font-size:1rem;color:var(--dark);letter-spacing:-0.02em;}
+.pc-title{font-size:0.78rem;color:var(--muted);margin-top:0.1rem;}
+.pc-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;}
+.pc-stat{
+  background:var(--bg2);border-radius:10px;padding:0.9rem;
+  border:1px solid var(--border);
+}
+.pc-stat-n{font-size:1.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;font-family:var(--ff);}
+.pc-stat-l{font-size:0.7rem;color:var(--muted);margin-top:0.1rem;font-family:var(--mono);}
+.pc-tags-lbl{font-size:0.7rem;font-family:var(--mono);color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem;}
+.pc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.pc-tag{
+  font-size:0.72rem;background:var(--bg2);color:var(--mid);
+  border:1px solid var(--border);border-radius:4px;
+  padding:0.2rem 0.55rem;font-family:var(--mono);
+}
+
+/* ─── SECTION BASICS ─── */
+section{padding:5.5rem 6vw;}
+.sec-kicker{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:var(--mono);font-size:0.7rem;font-weight:500;
+  color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:0.6rem;
+}
+.sec-kicker::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--accent);}
+h2.sec-h{
+  font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;
+  letter-spacing:-0.03em;color:var(--dark);
+  margin-bottom:0.5rem;
+}
+.sec-sub{font-size:1rem;color:var(--mid);max-width:520px;margin-bottom:3rem;line-height:1.7;}
+.divider{height:1px;background:var(--border);}
+
+/* ─── FOR ROLES (what I can do) ─── */
+.roles-section{background:var(--dark);color:#fff;}
+.roles-section .sec-kicker{color:#60a5fa;}
+.roles-section .sec-kicker::before{background:#60a5fa;}
+.roles-section h2.sec-h{color:#fff;}
+.roles-section .sec-sub{color:#94a3b8;}
+.roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;}
+.role-card{
+  background:#1e293b;border:1px solid #334155;
+  border-radius:12px;padding:1.5rem;
+  transition:border-color 0.2s,transform 0.2s;
+  cursor:default;
+}
+.role-card:hover{border-color:#3b82f6;transform:translateY(-2px);}
+.role-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;margin-bottom:1rem;
+}
+.role-card h3{font-size:0.975rem;font-weight:700;color:#f1f5f9;margin-bottom:0.4rem;}
+.role-card p{font-size:0.83rem;color:#94a3b8;line-height:1.65;}
+.role-tag{
+  display:inline-block;margin-top:0.9rem;
+  font-family:var(--mono);font-size:0.68rem;
+  padding:0.2rem 0.6rem;border-radius:4px;font-weight:500;
+}
+
+/* ─── SKILLS ─── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+.skill-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.4rem;
+  box-shadow:var(--shadow);
+  transition:box-shadow 0.2s,transform 0.2s;
+}
+.skill-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.skill-head{
+  display:flex;align-items:center;gap:0.6rem;
+  margin-bottom:1rem;
+}
+.skill-ico{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:0.9rem;
+}
+.skill-cat{font-size:0.8rem;font-weight:700;color:var(--dark);}
+.pill-wrap{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.pill{
+  font-size:0.73rem;font-family:var(--mono);
+  padding:0.25rem 0.65rem;border-radius:5px;
+  border:1px solid transparent;font-weight:500;
+}
+.pill.b{background:var(--accent-light);color:var(--accent);border-color:var(--accent-mid);}
+.pill.v{background:var(--accent2-light);color:var(--accent2);border-color:#ddd6fe;}
+.pill.g{background:var(--green-light);color:var(--green);border-color:#a7f3d0;}
+.pill.a{background:var(--amber-light);color:var(--amber);border-color:#fde68a;}
+.pill.r{background:var(--red-light);color:var(--red);border-color:#fecaca;}
+.pill.n{background:var(--bg2);color:var(--mid);border-color:var(--border);}
+
+/* ─── PROJECT ─── */
+.proj-wrap{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);
+}
+.proj-hero-banner{
+  background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);
+  padding:3rem 3.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+}
+.proj-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);
+  border-radius:100px;padding:0.3rem 0.9rem;
+  font-family:var(--mono);font-size:0.7rem;color:#60a5fa;
+  margin-bottom:0.9rem;letter-spacing:0.06em;
+}
+.proj-hero-banner h3{
+  font-size:2rem;font-weight:800;color:#fff;
+  letter-spacing:-0.03em;margin-bottom:0.5rem;
+}
+.proj-hero-banner p{color:#94a3b8;font-size:0.925rem;line-height:1.7;max-width:400px;}
+.proj-live-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--accent);color:#fff;text-decoration:none;
+  padding:0.8rem 1.75rem;border-radius:8px;
+  font-weight:700;font-size:0.875rem;margin-top:1.25rem;
+  transition:background 0.15s,transform 0.15s;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(37,99,235,0.35);
+}
+.proj-live-btn:hover{background:#1d4ed8;transform:translateY(-1px);}
+.proj-browser{
+  background:#1e293b;border:1px solid #334155;
+  border-radius:10px;min-width:260px;max-width:320px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.pb-bar{
+  background:#0f172a;padding:0.6rem 0.8rem;
+  display:flex;align-items:center;gap:0.6rem;
+  border-bottom:1px solid #334155;
+}
+.pb-dots{display:flex;gap:4px;}
+.pb-d{width:7px;height:7px;border-radius:50%;}
+.pb-d:nth-child(1){background:#ef4444;}
+.pb-d:nth-child(2){background:#f59e0b;}
+.pb-d:nth-child(3){background:#10b981;}
+.pb-url{flex:1;background:#1e293b;border-radius:4px;padding:0.2rem 0.6rem;font-family:var(--mono);font-size:0.58rem;color:#64748b;}
+.pb-body{padding:0.75rem;}
+.pb-hdr{
+  height:48px;border-radius:5px;margin-bottom:0.5rem;
+  background:linear-gradient(135deg,rgba(37,99,235,0.3),rgba(124,58,237,0.25));
+  display:flex;align-items:center;padding:0 0.75rem;gap:0.5rem;
+}
+.pb-logo{font-weight:800;font-size:0.6rem;color:#60a5fa;}
+.pb-tag{font-size:0.42rem;color:#475569;flex:1;}
+.pb-cta{background:#2563eb;border-radius:3px;padding:0.18rem 0.45rem;font-size:0.42rem;color:#fff;}
+.pb-row{display:flex;gap:0.4rem;margin-bottom:0.35rem;}
+.pb-c{flex:1;height:28px;background:#0f172a;border-radius:4px;border:1px solid #1e293b;}
+.pb-c.hl{background:rgba(37,99,235,0.12);border-color:rgba(37,99,235,0.2);}
+.proj-body{padding:2.5rem 3rem;}
+.proj-2col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.proj-features h4,.proj-tech-used h4{
+  font-size:0.75rem;font-family:var(--mono);color:var(--muted);
+  letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem;
+}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.feat-list li{
+  display:flex;align-items:flex-start;gap:0.6rem;
+  font-size:0.9rem;color:var(--mid);line-height:1.6;
+}
+.feat-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:0.1rem;}
+.tech-used{display:flex;flex-wrap:wrap;gap:0.45rem;}
+
+/* ─── EXPERIENCE ─── */
+.exp-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:14px;padding:2rem 2.25rem;
+  box-shadow:var(--shadow);
+  display:grid;grid-template-columns:56px 1fr;gap:1.5rem;
+}
+.exp-ico{
+  width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;
+}
+.exp-date{font-family:var(--mono);font-size:0.72rem;color:var(--muted);margin-bottom:0.3rem;}
+.exp-role{font-size:1.15rem;font-weight:800;color:var(--dark);letter-spacing:-0.02em;margin-bottom:0.2rem;}
+.exp-co{color:var(--accent);font-weight:600;font-size:0.9rem;margin-bottom:1.1rem;}
+.exp-ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.exp-ul li{font-size:0.875rem;color:var(--mid);line-height:1.65;padding-left:1.1rem;position:relative;}
+.exp-ul li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:1rem;}
+
+/* ─── EDUCATION ─── */
+.edu-list{display:flex;flex-direction:column;gap:0.9rem;}
+.edu-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem 1.75rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  box-shadow:var(--shadow);transition:box-shadow 0.2s;
+}
+.edu-card:hover{box-shadow:var(--shadow-md);}
+.edu-l{display:flex;align-items:center;gap:1rem;}
+.edu-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--accent-light);display:flex;align-items:center;
+  justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid var(--accent-mid);
+}
+.edu-deg{font-weight:700;font-size:0.975rem;color:var(--dark);margin-bottom:0.2rem;}
+.edu-inst{font-size:0.8rem;color:var(--muted);}
+.edu-r{text-align:right;}
+.edu-yr{font-family:var(--mono);font-size:0.72rem;color:var(--accent);font-weight:500;}
+.edu-gr{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+
+/* ─── CONTACT ─── */
+.contact-section{background:linear-gradient(135deg,#0f172a,#1e1b4b);}
+.contact-section .sec-kicker{color:#60a5fa;}
+.contact-section .sec-kicker::before{background:#60a5fa;}
+.contact-section h2.sec-h{color:#fff;}
+.contact-section .sec-sub{color:#94a3b8;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.c-links{display:flex;flex-direction:column;gap:0.75rem;}
+.c-link{
+  display:flex;align-items:center;gap:1rem;text-decoration:none;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:1rem 1.25rem;
+  transition:background 0.15s,border-color 0.15s,transform 0.15s;
+}
+.c-link:hover{background:rgba(255,255,255,0.1);border-color:rgba(59,130,246,0.5);transform:translateX(4px);}
+.c-icon{font-size:1rem;flex-shrink:0;}
+.c-lbl{font-family:var(--mono);font-size:0.65rem;color:#64748b;letter-spacing:0.08em;text-transform:uppercase;}
+.c-val{font-size:0.875rem;font-weight:500;color:#f1f5f9;}
+.cert-panel{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;padding:1.5rem;
+}
+.cert-panel-h{font-family:var(--mono);font-size:0.7rem;color:#60a5fa;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.1rem;}
+.cert-item{
+  display:flex;align-items:center;gap:0.85rem;
+  padding:0.85rem 0;border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.cert-item:last-child{border-bottom:none;padding-bottom:0;}
+.cert-ico{
+  width:38px;height:38px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  display:flex;align-items:center;justify-content:center;font-size:0.9rem;
+}
+.cert-n{font-size:0.875rem;font-weight:600;color:#f1f5f9;}
+.cert-d{font-family:var(--mono);font-size:0.7rem;color:#64748b;}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--dark);text-align:center;padding:1.75rem 6vw;
+  font-family:var(--mono);font-size:0.75rem;color:#475569;
+}
+footer a{color:var(--accent);text-decoration:none;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:3rem;padding-top:6.5rem;}
+  .profile-card{max-width:400px;}
+  .proj-2col{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .proj-hero-banner{flex-direction:column;}
+}
+@media(max-width:700px){
+  .hero{padding-top:6rem;}
+  .nav-links li:not(:last-child){display:none;}
+  .proj-body{padding:1.5rem;}
+  .proj-hero-banner{padding:2rem 1.5rem;}
+  section{padding:4rem 5vw;}
+  .exp-card{grid-template-columns:1fr;}
+  .edu-card{flex-direction:column;align-items:flex-start;}
+  .edu-r{text-align:left;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Saad<span>.</span>dev</a>
+  <ul class="nav-links">
+    <li><a href="#roles">What I Do</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div>
+    <div class="hero-avail"><span class="avail-dot"></span>Actively looking for opportunities</div>
+    <h1>Full Stack Dev<br>&amp; <em>IT Professional</em></h1>
+    <p class="hero-role">MCA Candidate · Web Development · Linux &amp; Server · Database Management</p>
+    <p class="hero-desc">
+      I'm <strong>Saad Munaf Bangi</strong> — a motivated IT fresher based in Pune, India.
+      I build web applications end-to-end using React, Next.js, Node.js and MongoDB,
+      and have hands-on experience with <strong>Linux server administration</strong>,
+      SQL/NoSQL databases, and cloud fundamentals on <strong>AWS EC2</strong>.
+      I'm looking for roles in software development, IT support, application support,
+      or database operations.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-blue">View My Work ↓</a>
+      <a href="mailto:saadmunaf.b@gmail.com" class="btn-ghost">Get In Touch</a>
+    </div>
+    <div class="hero-quick">
+      <span class="hero-q">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Pune, Maharashtra, India
+      </span>
+      <span class="hero-q">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        MCA — AICAIT, Pune (2025–2027)
+      </span>
+      <span class="hero-q">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        Internship @ Dar Al-Sharq, Doha
+      </span>
+    </div>
+  </div>
+  <div>
+    <div class="profile-card">
+      <div class="pc-top">
+        <div class="pc-avatar">S</div>
+        <div>
+          <div class="pc-name">Saad Munaf Bangi</div>
+          <div class="pc-title">IT Fresher · Full Stack Developer</div>
+        </div>
+      </div>
+      <div class="pc-stats">
+        <div class="pc-stat"><div class="pc-stat-n">1+</div><div class="pc-stat-l">yr exp</div></div>
+        <div class="pc-stat"><div class="pc-stat-n">10+</div><div class="pc-stat-l">technologies</div></div>
+        <div class="pc-stat"><div class="pc-stat-n">3</div><div class="pc-stat-l">DB types</div></div>
+        <div class="pc-stat"><div class="pc-stat-n">AWS</div><div class="pc-stat-l">EC2 basics</div></div>
+      </div>
+      <div class="pc-tags-lbl">Core Technologies</div>
+      <div class="pc-tags">
+        <span class="pc-tag">React.js</span><span class="pc-tag">Next.js</span>
+        <span class="pc-tag">Node.js</span><span class="pc-tag">Express.js</span>
+        <span class="pc-tag">MongoDB</span><span class="pc-tag">MySQL</span>
+        <span class="pc-tag">Linux</span><span class="pc-tag">AWS EC2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT I CAN DO FOR YOU ═══ -->
+<section class="roles-section" id="roles" style="padding:5.5rem 6vw;">
+  <div class="sec-kicker">What I Can Do</div>
+  <h2 class="sec-h" style="color:#fff;">IT Roles I'm Ready For</h2>
+  <p class="sec-sub">My skills span multiple IT domains — here's how I can contribute from day one.</p>
+  <div class="roles-grid">
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(59,130,246,0.15);">💻</div>
+      <h3>Full Stack Developer</h3>
+      <p>Build and maintain web apps using React, Next.js, Node.js, Express and MongoDB — from UI to API to database.</p>
+      <span class="role-tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;">Web Development</span>
+    </div>
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(16,185,129,0.15);">🖥️</div>
+      <h3>Technical / IT Support</h3>
+      <p>Debug, troubleshoot and resolve software and application issues. Comfortable with testing, logging and support workflows.</p>
+      <span class="role-tag" style="background:rgba(16,185,129,0.15);color:#34d399;">IT Support</span>
+    </div>
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(245,158,11,0.15);">🗄️</div>
+      <h3>Database Operations</h3>
+      <p>Design schemas, write SQL queries, and manage MySQL, SQLite3 and MongoDB databases. Strong foundation in SQL fundamentals.</p>
+      <span class="role-tag" style="background:rgba(245,158,11,0.15);color:#fbbf24;">Database Work</span>
+    </div>
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(139,92,246,0.15);">🐧</div>
+      <h3>Linux / Server Admin</h3>
+      <p>Manage Ubuntu/Linux environments — file permissions, SSH, package management, service management, process monitoring and basic networking.</p>
+      <span class="role-tag" style="background:rgba(139,92,246,0.15);color:#a78bfa;">Linux & Servers</span>
+    </div>
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(239,68,68,0.15);">☁️</div>
+      <h3>Cloud Fundamentals</h3>
+      <p>Hands-on experience with AWS EC2, Ubuntu Server setup, PuTTY remote access and Webmin server management panel.</p>
+      <span class="role-tag" style="background:rgba(239,68,68,0.15);color:#f87171;">Cloud & AWS</span>
+    </div>
+    <div class="role-card">
+      <div class="role-icon" style="background:rgba(6,182,212,0.15);">🔧</div>
+      <h3>Application Support</h3>
+      <p>Support web applications in production — identify bugs, test features, coordinate fixes, and ensure consistent performance.</p>
+      <span class="role-tag" style="background:rgba(6,182,212,0.15);color:#22d3ee;">App Support</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" style="background:var(--bg2);">
+  <div class="sec-kicker">Technical Skills</div>
+  <h2 class="sec-h">Tools &amp; Technologies</h2>
+  <p class="sec-sub">A broad and growing skill set across frontend, backend, databases, Linux, and cloud infrastructure.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:var(--accent-light);">{ }</div><div class="skill-cat">Programming Languages</div></div>
+      <div class="pill-wrap"><span class="pill b">JavaScript</span><span class="pill b">Python</span><span class="pill b">Java</span><span class="pill b">HTML5</span><span class="pill b">CSS3</span><span class="pill b">SQL</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:var(--accent2-light);">⚛</div><div class="skill-cat">Frontend Development</div></div>
+      <div class="pill-wrap"><span class="pill v">React.js</span><span class="pill v">Next.js</span><span class="pill v">Tailwind CSS</span><span class="pill v">Bootstrap 5</span><span class="pill v">CoreUI</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:var(--green-light);">⬡</div><div class="skill-cat">Backend Development</div></div>
+      <div class="pill-wrap"><span class="pill g">Node.js</span><span class="pill g">Express.js</span><span class="pill g">Django</span><span class="pill g">REST APIs</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:var(--amber-light);">🗄</div><div class="skill-cat">Databases</div></div>
+      <div class="pill-wrap"><span class="pill a">MongoDB</span><span class="pill a">MySQL</span><span class="pill a">SQLite3</span><span class="pill a">SQL</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:#fef2f2;">🐧</div><div class="skill-cat">Linux &amp; IT Fundamentals</div></div>
+      <div class="pill-wrap"><span class="pill r">Ubuntu/Linux</span><span class="pill r">SSH</span><span class="pill r">File Permissions</span><span class="pill r">Package Mgmt</span><span class="pill r">Service Mgmt</span><span class="pill r">Process Monitor</span><span class="pill r">Networking</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-head"><div class="skill-ico" style="background:var(--bg2);">☁️</div><div class="skill-cat">Cloud &amp; Dev Tools</div></div>
+      <div class="pill-wrap"><span class="pill n">AWS EC2</span><span class="pill n">Ubuntu Server</span><span class="pill n">PuTTY</span><span class="pill n">Webmin</span><span class="pill n">Git</span><span class="pill n">GitHub</span><span class="pill n">VS Code</span><span class="pill n">Vercel</span><span class="pill n">Render</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══ PROJECT ═══ -->
+<section id="projects">
+  <div class="sec-kicker">Projects</div>
+  <h2 class="sec-h">What I've Built</h2>
+  <p class="sec-sub">A production-deployed full-stack application built independently as an MCA project.</p>
+  <div class="proj-wrap">
+    <div class="proj-hero-banner">
+      <div>
+        <div class="proj-badge">🟢 Live &amp; Deployed · MCA Project · 2025</div>
+        <h3>StudyStream — Learning Management System</h3>
+        <p>A production-ready web platform for online learning — built for students, instructors and administrators. Deployed on Vercel and Render.</p>
+        <a href="https://lms-mca.vercel.app" target="_blank" rel="noopener" class="proj-live-btn">
+          🔗 View Live Project
+        </a>
+      </div>
+      <div class="proj-browser">
+        <div class="pb-bar">
+          <div class="pb-dots"><div class="pb-d"></div><div class="pb-d"></div><div class="pb-d"></div></div>
+          <div class="pb-url">lms-mca.vercel.app</div>
+        </div>
+        <div class="pb-body">
+          <div class="pb-hdr">
+            <div class="pb-logo">StudyStream</div>
+            <div class="pb-tag">Unlock Your Potential.</div>
+            <div class="pb-cta">Browse</div>
+          </div>
+          <div class="pb-row"><div class="pb-c hl"></div><div class="pb-c"></div><div class="pb-c"></div></div>
+          <div class="pb-row"><div class="pb-c"></div><div class="pb-c hl"></div><div class="pb-c"></div></div>
+          <div class="pb-row"><div class="pb-c"></div><div class="pb-c"></div><div class="pb-c hl"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div class="proj-2col">
+        <div class="proj-features">
+          <h4>Key Features</h4>
+          <ul class="feat-list">
+            <li>Multi-role system — students, instructors/providers, and admins each have separate dashboards</li>
+            <li>Course management — organisations can create, publish and manage courses</li>
+            <li>Browse &amp; filter by category, difficulty level and star rating</li>
+            <li>Student enrolment and progress tracking</li>
+            <li>MongoDB for storing users, courses and application data</li>
+            <li>Fully responsive — works on mobile, tablet and desktop</li>
+            <li>Deployed via Vercel (frontend) and Render (backend)</li>
+          </ul>
+        </div>
+        <div class="proj-tech-used">
+          <h4>Tech Stack</h4>
+          <div class="tech-used" style="margin-bottom:1.5rem;">
+            <span class="pill v">Next.js</span>
+            <span class="pill v">React.js</span>
+            <span class="pill b">Tailwind CSS</span>
+            <span class="pill g">Node.js</span>
+            <span class="pill g">Express.js</span>
+            <span class="pill a">MongoDB</span>
+            <span class="pill g">REST APIs</span>
+            <span class="pill n">Vercel</span>
+            <span class="pill n">Render</span>
+          </div>
+          <h4>What This Demonstrates</h4>
+          <ul class="feat-list">
+            <li>End-to-end full-stack development ability</li>
+            <li>REST API design and integration</li>
+            <li>Database schema design with MongoDB</li>
+            <li>Deployment and hosting on cloud platforms</li>
+            <li>Responsive UI design with Tailwind CSS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" style="background:var(--bg2);">
+  <div class="sec-kicker">Experience</div>
+  <h2 class="sec-h">Work History</h2>
+  <p class="sec-sub">Real-world professional experience gained through a training-based internship.</p>
+  <div class="exp-card">
+    <div class="exp-ico">💼</div>
+    <div>
+      <div class="exp-date">SEPTEMBER 2024 — DECEMBER 2024 · DOHA, QATAR</div>
+      <div class="exp-role">Trainee — Full Stack Developer</div>
+      <div class="exp-co">Dar Al Sharq</div>
+      <ul class="exp-ul">
+        <li>Gained practical experience building web applications using Node.js, React.js, Bootstrap and CSS under senior developer supervision.</li>
+        <li>Developed frontend components and responsive web interfaces for client-facing projects.</li>
+        <li>Assisted with backend development and application functionality using Node.js.</li>
+        <li>Handled debugging, troubleshooting and bug resolution during the development lifecycle.</li>
+        <li>Tested web pages and application features to identify and fix functional and UI-related issues.</li>
+        <li>Implemented development tasks from requirements provided by supervisors — working within a professional team workflow.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="sec-kicker">Education</div>
+  <h2 class="sec-h">Academic Background</h2>
+  <p class="sec-sub">Computer science-focused education providing a strong theoretical and practical foundation.</p>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div class="edu-l">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-deg">Master of Computer Application (MCA)</div>
+          <div class="edu-inst">Allana Institute of Computer Application and Information Technology, Pune</div>
+        </div>
+      </div>
+      <div class="edu-r">
+        <div class="edu-yr">2025 — Present</div>
+        <div class="edu-gr">Expected: June 2027</div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-l">
+        <div class="edu-icon">📘</div>
+        <div>
+          <div class="edu-deg">Bachelor of Computer Application (BCA)</div>
+          <div class="edu-inst">Institute of Business Studies and Research, Navi Mumbai</div>
+        </div>
+      </div>
+      <div class="edu-r">
+        <div class="edu-yr">2021 — 2024</div>
+        <div class="edu-gr">CGPA: 7.030</div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-l">
+        <div class="edu-icon">🏫</div>
+        <div>
+          <div class="edu-deg">Higher Secondary Certificate — Commerce</div>
+          <div class="edu-inst">Ideal Indian School, Doha, Qatar</div>
+        </div>
+      </div>
+      <div class="edu-r">
+        <div class="edu-yr">2019 — 2021</div>
+        <div class="edu-gr">71.4%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section" id="contact" style="padding:5.5rem 6vw;">
+  <div class="sec-kicker">Contact</div>
+  <h2 class="sec-h">Let's Talk</h2>
+  <p class="sec-sub">I'm actively looking for IT roles — software development, technical support, database operations, or Linux/server administration. Reach out and let's discuss.</p>
+  <div class="contact-grid">
+    <div class="c-links">
+      <a href="mailto:saadmunaf.b@gmail.com" class="c-link">
+        <span class="c-icon">✉️</span>
+        <div><div class="c-lbl">Email</div><div class="c-val">saadmunaf.b@gmail.com</div></div>
+      </a>
+      <a href="tel:+919137466155" class="c-link">
+        <span class="c-icon">📞</span>
+        <div><div class="c-lbl">Phone</div><div class="c-val">+91 91374 66155</div></div>
+      </a>
+      <a href="https://lms-mca.vercel.app" target="_blank" rel="noopener" class="c-link">
+        <span class="c-icon">🌐</span>
+        <div><div class="c-lbl">Live Project</div><div class="c-val">lms-mca.vercel.app</div></div>
+      </a>
+      <div class="c-link" style="cursor:default;">
+        <span class="c-icon">📍</span>
+        <div><div class="c-lbl">Location</div><div class="c-val">Kondhwa, Pune, Maharashtra, India</div></div>
+      </div>
+    </div>
+    <div class="cert-panel">
+      <div class="cert-panel-h">Certifications</div>
+      <div class="cert-item">
+        <div class="cert-ico">🏅</div>
+        <div>
+          <div class="cert-n">Dar Al-Sharq Internship Certificate</div>
+          <div class="cert-d">December 8, 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Saad Munaf Bangi &nbsp;·&nbsp; Full Stack Developer &amp; IT Professional &nbsp;·&nbsp; Pune, India &nbsp;·&nbsp; <a href="mailto:saadmunaf.b@gmail.com">saadmunaf.b@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
